@@ -58,6 +58,23 @@ def relu(x, deriv=False):
     return np.maximum(x, 0, x)
 
 
+def softplus(x, deriv=False):
+    '''
+    INPUT:
+        x: numpy array
+        deriv: bool
+    OUTPUT: numpy array
+
+    Return the SoftPlus of input array. 
+    SoftPlus is another "rectifier" that is differentiable continually
+
+    The derivative of softplus is the sigmoid
+    '''
+    if deriv:
+        return sigmoid(x)
+    return np.log(1 + np.exp(x))
+
+
 def softmax(x, deriv=False):
     '''
     INPUT:

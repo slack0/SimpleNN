@@ -1,9 +1,9 @@
 from src.nn import NeuralNet
 from src.layers import DenseLayer, InputLayer
-from src.utilities import load_data, sigmoid, softmax, tanh, relu
+from src.utilities import load_data, sigmoid, softplus, softmax, tanh, relu
 
 input_layer = InputLayer((None, 784))
-hidden_layer = DenseLayer(input_layer, 30, nonlinearity=sigmoid)
+hidden_layer = DenseLayer(input_layer, 30, nonlinearity=softplus)
 output_layer = DenseLayer(hidden_layer, 10, nonlinearity=softmax)
 layers = [input_layer, hidden_layer, output_layer]
 
